@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/TVTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Song_Title" />
+
+    <EditText
+        android:id="@+id/ETSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/ETTitle" />
+
+    <TextView
+        android:id="@+id/TVSinger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Singers" />
+
+    <EditText
+        android:id="@+id/ETSinger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/ETSinger" />
+
+    <TextView
+        android:id="@+id/TVYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Year" />
+
+    <EditText
+        android:id="@+id/ETYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"
+        android:hint="@string/ETYear" />
+
+    <TextView
+        android:id="@+id/TVStars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/RadioStar" />
+
+    <RadioGroup
+        android:id="@+id/RBGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RB1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/Radio1" />
+
+        <RadioButton
+            android:id="@+id/RB2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/Radio2" />
+
+        <RadioButton
+            android:id="@+id/RB3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/Radio3" />
+
+        <RadioButton
+            android:id="@+id/RB4"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/Radio4" />
+
+        <RadioButton
+            android:id="@+id/RB5"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/Radio5" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/BtnInsert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:text="@string/btnInsert" />
+
+        <Button
+            android:id="@+id/BtnShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:text="@string/btnShow" />
+    </LinearLayout>
+
+</LinearLayout>
