@@ -23,7 +23,8 @@ public class DisplayActivity extends AppCompatActivity {
     Spinner SPNOption;
 
     ArrayList<Song> List;
-    ArrayAdapter<Song> ArrayAdapterList;
+    CustomAdapter ArrayList;
+    //ArrayAdapter<Song> ArrayAdapterList;
     ListView LVDisplay;
 
     @Override
@@ -34,9 +35,9 @@ public class DisplayActivity extends AppCompatActivity {
 
         List.clear();
         List.addAll(dbh.getAllSongs());
-        ArrayAdapterList = new ArrayAdapter<Song>(this, android.R.layout.simple_list_item_1, List);
+        ArrayList = new CustomAdapter(this, R.layout.row, List);
 
-        LVDisplay.setAdapter(ArrayAdapterList);
+        LVDisplay.setAdapter(ArrayList);
     }
 
     @Override
@@ -56,9 +57,9 @@ public class DisplayActivity extends AppCompatActivity {
         //Setting ArrayList to ListView,
         List = new ArrayList<Song>();
         List.addAll(dbh.getAllSongs());
-        ArrayAdapterList = new ArrayAdapter<Song>(this, android.R.layout.simple_list_item_1, List);
+        ArrayList = new CustomAdapter(this, R.layout.row, List);
 
-        LVDisplay.setAdapter(ArrayAdapterList);
+        LVDisplay.setAdapter(ArrayList);
 
         LVDisplay.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -89,7 +90,7 @@ public class DisplayActivity extends AppCompatActivity {
                     Checker[0] = true;
                 }
 
-                ArrayAdapterList.notifyDataSetChanged();
+                ArrayList.notifyDataSetChanged();
             }
         });
 
@@ -98,53 +99,32 @@ public class DisplayActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 List.clear();
 
-                if(SPNOption.getSelectedItem().equals(1984))
+                if(SPNOption.getSelectedItem().equals("1984"))
                 {
-                    if(Checker[0])
-                    {   List.addAll(dbh.getAllSongsYEAR5(1984));        }
-
-                    else
-                    {   List.addAll(dbh.getAllSongsYEAR(1984));     }
-
+                    List.addAll(dbh.getAllSongsYEAR(1984));
                 }
 
-                else if(SPNOption.getSelectedItem().equals(1999))
+                else if(SPNOption.getSelectedItem().equals("1999"))
                 {
-                    if(Checker[0])
-                    {   List.addAll(dbh.getAllSongsYEAR5(1999));        }
-
-                    else
-                    {   List.addAll(dbh.getAllSongsYEAR(1999));     }
+                    List.addAll(dbh.getAllSongsYEAR(1999));
                 }
 
-                else if(SPNOption.getSelectedItem().equals(2007))
+                else if(SPNOption.getSelectedItem().equals("2007"))
                 {
-                    if(Checker[0])
-                    {   List.addAll(dbh.getAllSongsYEAR5(2007));        }
-
-                    else
-                    {   List.addAll(dbh.getAllSongsYEAR(2007));     }
+                    List.addAll(dbh.getAllSongsYEAR(2007));
                 }
 
-                else if(SPNOption.getSelectedItem().equals(2021))
+                else if(SPNOption.getSelectedItem().equals("2021"))
                 {
-                    if(Checker[0])
-                    {   List.addAll(dbh.getAllSongsYEAR5(2021));        }
-
-                    else
-                    {   List.addAll(dbh.getAllSongsYEAR(2021));     }
+                  List.addAll(dbh.getAllSongsYEAR(2021));
                 }
 
                 else
                 {
-                    if(Checker[0])
-                    {   List.addAll(dbh.getAllSongs5());        }
-
-                    else
-                    {   List.addAll(dbh.getAllSongs());     }
+                    List.addAll(dbh.getAllSongs());     
                 }
 
-                ArrayAdapterList.notifyDataSetChanged();
+                ArrayList.notifyDataSetChanged();
             }
 
             @Override

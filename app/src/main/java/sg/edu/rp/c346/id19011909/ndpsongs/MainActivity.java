@@ -64,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {   data3 = 5;      }
 
+                //Clearing Fields,
+                ETSong.setText("");
+                ETSinger.setText("");
+                ETYear.setText("");
+
                 DBHelper dbh = new DBHelper(MainActivity.this);
                 long dataInsert = dbh.insertSong(data0, data1, data2, data3);
 

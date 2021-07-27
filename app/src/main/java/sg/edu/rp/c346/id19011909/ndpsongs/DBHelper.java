@@ -143,7 +143,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 + COLUMN_1 + ", "
                 + COLUMN_2 + ", "
                 + COLUMN_3
-                + " FROM " + TABLE_NOTE + " WHERE " + COLUMN_2 + "= " + data;
+                + " FROM " + TABLE_NOTE + " WHERE " + COLUMN_2 + "== " + data;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectedQuery, null);

@@ -49,7 +49,17 @@ public class Song implements Serializable {
     public void setStars(int i) {   this.stars = i;     }
 
     @Override
-    public String toString() {  return "\nID: " + _id + "\nTitle: " + title + "\nSingers: " + singers + "\nYear: " + year + "\nStars: " + stars + "\n";       }
+    public String toString()
+    {
+        String x = "";
+
+        for(int i = 0; i < stars; i++)
+        {
+            x += "* ";
+        }
+
+        return x;
+    }
 
 
 }
