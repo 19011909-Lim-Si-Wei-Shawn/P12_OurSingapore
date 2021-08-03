@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.RatingBar;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     EditText ETSinger;
     EditText ETYear;
 
-    RadioGroup RBGroup;
+    RatingBar RBStars;
 
     Button BtnInsert;
     Button BtnShow;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         ETSinger = findViewById(R.id.ETSinger);
         ETYear = findViewById(R.id.ETYear);
 
-        RBGroup = findViewById(R.id.RBGroup);
+        RBStars = findViewById(R.id.ratingBarStars);
 
         BtnInsert = findViewById(R.id.BtnInsert);
         BtnShow = findViewById(R.id.BtnShow);
@@ -45,24 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 String data0 = ETSong.getText().toString();
                 String data1 = ETSinger.getText().toString();
                 int data2 = Integer.parseInt(ETYear.getText().toString());
-                int data3 = 0;
 
-                //Getting RadioCheck Result,
-                int RadioChecker = RBGroup.getCheckedRadioButtonId();
-                if(RadioChecker == R.id.RB1)
-                {   data3 = 1;      }
-
-                else if(RadioChecker == R.id.RB2)
-                {   data3 = 2;      }
-
-                else if(RadioChecker == R.id.RB3)
-                {   data3 = 3;      }
-
-                else if(RadioChecker == R.id.RB4)
-                {   data3 = 4;      }
-
-                else
-                {   data3 = 5;      }
+                //Getting RatingBar Result,
+                int stars = (int)RBStars.getRating();
 
                 //Clearing Fields,
                 ETSong.setText("");
@@ -70,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 ETYear.setText("");
 
                 DBHelper dbh = new DBHelper(MainActivity.this);
-                long dataInsert = dbh.insertSong(data0, data1, data2, data3);
+                long dataInsert = dbh.insertSong(data0, data1, data2, stars);
 
                 Log.i("Insert", String.valueOf(dataInsert));
 

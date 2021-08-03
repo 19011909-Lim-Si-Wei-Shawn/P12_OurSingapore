@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -39,7 +41,8 @@ public class CustomAdapter extends ArrayAdapter {
         TextView tvTitle = rowView.findViewById(R.id.TitleTV);
         TextView tvSinger = rowView.findViewById(R.id.SingersTV);
         TextView tvYear = rowView.findViewById(R.id.YearTV);
-        TextView tvStar = rowView.findViewById(R.id.StarTV);
+        RatingBar RBStar = rowView.findViewById(R.id.ratingBarDisplay);
+        ImageView ivNew = rowView.findViewById(R.id.ImageTag);
 
         //Obtaining Android Version Information using Position,
         Song Current = PositionList.get(position);
@@ -48,7 +51,14 @@ public class CustomAdapter extends ArrayAdapter {
         tvTitle.setText(Current.getTitle());
         tvSinger.setText(Current.getSingers());
         tvYear.setText(String.valueOf(Current.getYear()));
-        tvStar.setText(Current.toString());
+        RBStar.setRating(Float.parseFloat(String.valueOf(Current.getStars())));
+        ivNew.setImageResource(R.drawable.newsong);
+
+        if(Current.getYear() >= 2019)
+        {   ivNew.setVisibility(View.VISIBLE);      }
+
+        else
+        {   ivNew.setVisibility(View.INVISIBLE);        }
 
         return rowView;
     }
