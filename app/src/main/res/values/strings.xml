@@ -1,25 +1,19 @@
 <resources>
-    <string name="app_name">NDPSongs</string>
+    <string name="app_name">My Singapore ~ Modify Island</string>
 
-    <string name="SongID">Song ID:</string>
-    <string name="Song_Title">Song Title:</string>
-    <string name="Singers">Singers:</string>
-    <string name="Year">Year:</string>
+    <string name="SongID">ID:</string>
+    <string name="Song_Title">Name:</string>
+    <string name="Singers">Description:</string>
+    <string name="Year">Square KM:</string>
     <string name="RadioStar">Stars:</string>
 
-    <string name="ETTitle">Enter Song Title Here</string>
-    <string name="ETSinger">Enter Singers\' Name Here</string>
-    <string name="ETYear">Enter Year of Release Here</string>
-
-    <string name="Radio1">1</string>
-    <string name="Radio2">2</string>
-    <string name="Radio3">3</string>
-    <string name="Radio4">4</string>
-    <string name="Radio5">5</string>
+    <string name="ETTitle">Enter Island Name Here</string>
+    <string name="ETSinger">Enter Description Here</string>
+    <string name="ETYear">Enter Square KM Here</string>
 
     <string name="btnInsert">INSERT</string>
     <string name="btnShow">SHOW LIST</string>
-    <string name="btnShow5">SHOW ALL SONGS WITH 5 STARS</string>
+    <string name="btnShow5">SHOW ALL Island WITH 5 STARS</string>
 
     <string name="btnUpdate">UPDATE</string>
     <string name="btnDelete">DELETE</string>
